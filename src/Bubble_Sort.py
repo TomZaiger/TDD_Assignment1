@@ -1,11 +1,12 @@
 def bubble_sort(arr):
-    n = len(arr)
+    new_arr = arr.copy()
+    n = len(new_arr)
     for i in range(n):
         for j in range(0, n - i - 1):
             try:
-                if arr[j] > arr[j + 1]:
-                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                if new_arr[j] > new_arr[j + 1]:
+                    new_arr[j], new_arr[j + 1] = new_arr[j + 1], new_arr[j]
             except TypeError:
                 print('ERROR! Values must be numbers')
                 raise ValueError
-    return arr
+    return new_arr
