@@ -28,3 +28,16 @@ def calculate_bmi_category(bmi):
         return 'Obese Class V (Super obese)'
     if bmi > 60:
         return 'Obese Class VI (Hyper obese)'
+
+
+def calculate_bmi(weight, height):
+    try:
+        weight = float(weight)
+        height = float(height)
+        if weight <= 0 or height <= 0:
+            raise ValueError
+    except ValueError:
+        print('ERROR! Values must be positive numbers')
+        raise
+    return weight/(height*height)
+
